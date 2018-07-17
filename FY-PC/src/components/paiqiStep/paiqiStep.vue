@@ -17,7 +17,7 @@
 		},
 		data() {
 			return {
-				navInd: '1',
+				navInd: '2',
 				aa: '/'
 			}
 		},

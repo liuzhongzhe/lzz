@@ -12,25 +12,39 @@
 					<el-form ref="form" :model="form" label-width="150px">
 						<p style="color: #409EFF;font-weight: bold;font-size: 15px;">长时间接触输入参数</p>
 						<el-form-item label="地毯材料">
-							<el-select>
-								<el-option label="区域一" value="shanghai"></el-option>
-								<el-option label="区域二" value="beijing"></el-option>
+							<el-select v-model="pro.valueOne">
+								<el-option label="ABS" value="ABS"></el-option>
+								<el-option label="AI" value="AI"></el-option>
+								<el-option label="Iron" value="Iron"></el-option>
+								<el-option label="Carpet" value="Carpet"></el-option>
+								<el-option label="160z" value="160z"></el-option>
+								<el-option label="Cotton" value="Cotton"></el-option>
+								<el-option label="Nylon" value="Nylon"></el-option>
 							</el-select>
 						</el-form-item>
 						<el-form-item label="地毯初始温度">
-							<el-select>
+							<el-input value="36">
+								<span slot="append">℃</span>
+							</el-input>
+							<!--<el-select>
 								<el-option label="区域一" value="shanghai"></el-option>
 								<el-option label="区域二" value="beijing"></el-option>
-							</el-select>
+							</el-select>-->
 						</el-form-item>
 						<el-form-item label="Continuous温度限值">
-							<el-input></el-input>
+							<el-input value="40">
+								<span slot="append">℃</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item label="Excursion温度限值">
-							<el-input></el-input>
+							<el-input value="42.2">
+								<span slot="append">℃</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item label="Extreme温度限值">
-							<el-input></el-input>
+							<el-input value="44.4">
+								<span slot="append">℃</span>
+							</el-input>
 						</el-form-item>
 						<div style="margin-top: 30px;margin-bottom: 10px;">
 							<span style="color: #409EFF;font-weight: bold;font-size: 15px;">TCEQ输入参数</span>
@@ -39,13 +53,15 @@
 						<transition name="el-fade-in-linear">
 							<div v-show="form.delivery">
 								<el-form-item label="热源温度">
-									<el-input></el-input>
+									<el-input value="100">
+										<span slot="append">℃</span>
+									</el-input>
 								</el-form-item>
 								<el-form-item label="接触系数">
-									<el-input></el-input>
+									<el-input value="0.8"></el-input>
 								</el-form-item>
 								<el-form-item label="涂层系数">
-									<el-input></el-input>
+									<el-input value="0.6"></el-input>
 								</el-form-item>
 							</div>
 						</transition>
@@ -59,15 +75,21 @@
 							<p style="color: #409EFF;font-weight: bold;font-size: 15px;">长时间接触温度结果</p>
 							<div class="sec">
 								<span>Continuous温度结果</span>
-								<el-input disabled="false" v-model="textOne"></el-input>
+								<el-input disabled="false" v-model="textOne">
+									<span slot="append">℃</span>
+								</el-input>
 							</div>
 							<div class="sec">
 								<span>Excursion温度结果</span>
-								<el-input disabled="false" v-model="textTwo"></el-input>
+								<el-input disabled="false" v-model="textTwo">
+									<span slot="append">℃</span>
+								</el-input>
 							</div>
 							<div class="sec">
 								<span>Extreme温度结果</span>
-								<el-input disabled="false" v-model="textThree"></el-input>
+								<el-input disabled="false" v-model="textThree">
+									<span slot="append">℃</span>
+								</el-input>
 							</div>
 						</div>
 						<div id="myChart" style="margin-top: 30px;"></div>
@@ -91,6 +113,18 @@
 				textOne: '',
 				textTwo: '',
 				textThree: '',
+				pro: {
+					valueOne: '',
+					valueTwo: '',
+					valueThree: '',
+					valueFour: '',
+					valueFive: '',
+					valueSix: '',
+					valueSeven: '',
+					valueEight: '',
+					valueNine: '1.0',
+					valueTen: '1.1',
+				},
 				form: {
 					name: '',
 					region: '',
@@ -117,9 +151,9 @@
 			},
 			onSubmit() {
 				this.drawList = [60, 101, 105, 93, 12, 25, 100, 56, 36, 47, 21]
-				this.textOne = 'AAA'
-				this.textTwo = 'BBB'
-				this.textThree = 'CCC'
+				this.textOne = '49'
+				this.textTwo = '57'
+				this.textThree = '364'
 				if(this.form.delivery) {
 					this.drawLine()
 				}
@@ -219,6 +253,9 @@
 		/deep/ .el-form-item {
 			margin-bottom: 10px;
 		}
+		/deep/ .el-input-group__append, .el-input-group__prepend{
+			padding: 0 10px;
+		}
 		.right {
 			flex: 1;
 			padding: 20px;
@@ -248,7 +285,7 @@
 					.longTimeResult {
 						.sec {
 							margin-bottom: 15px;
-							span {
+							>span {
 								display: inline-block;
 								width: 160px;
 								text-align: right;

@@ -10,49 +10,61 @@
 				</div>
 				<div style="display: flex;">
 					<el-form ref="form" :model="form" label-width="80px">
-						<el-form-item label="VPPS1">
+						<el-form-item label="VPPS L1">
 							<el-select v-model="form.region" style="margin-bottom: 5px;">
-								<el-option label="level1" value="shanghai"></el-option>
-								<el-option label="level2" value="beijing"></el-option>
+								<el-option label="10" value="10"></el-option>
+								<el-option label="20" value="20"></el-option>
+								<el-option label="30" value="30"></el-option>
 							</el-select>
 						</el-form-item>
-						<el-form-item label="VPPS2">
-							<el-select v-model="form.region" style="margin-bottom: 5px;">
-								<el-option label="level1" value="shanghai"></el-option>
-								<el-option label="level2" value="beijing"></el-option>
+						<el-form-item label="VPPS L2">
+							<el-select v-model="form.valueOne" style="margin-bottom: 5px;">
+								<el-option label="1" value="1"></el-option>
+								<el-option label="2" value="2"></el-option>
+								<el-option label="3" value="3"></el-option>
 							</el-select>
 						</el-form-item>
 						<el-form-item label="零件名称">
-							<el-select v-model="form.region" style="margin-bottom: 5px;">
-								<el-option label="part1" value="shanghai"></el-option>
-								<el-option label="part2" value="beijing"></el-option>
+							<el-select v-model="form.valueTwo" style="margin-bottom: 5px;">
+								<el-option label="Engine Beauty Cover" value="Engine Beauty Cover"></el-option>
+								<el-option label="Engine Beauty Cover Foam" value="Engine Beauty Cover Foam"></el-option>
+								<el-option label="Secondary Air Injection Pump" value="Secondary Air Injection Pump"></el-option>
+								<el-option label="Secondary Air Injection Pump Filter" value="Secondary Air Injection Pump Filter"></el-option>
 							</el-select>
 						</el-form-item>
 						<el-form-item label="零件材料">
-							<el-select v-model="form.region">
-								<el-option label="lj1" value="shanghai"></el-option>
-								<el-option label="lj2" value="beijing"></el-option>
+							<el-select v-model="form.valueThree">
+								<el-option label="Plastic" value="Plastic"></el-option>
+								<el-option label="Rubber" value="Rubber"></el-option>
+								<el-option label="Hose with coolant" value="Hose with coolant"></el-option>
+								<el-option label="Hose with refrigerant" value="Hose with refrigerant"></el-option>
+								<el-option label="Floor pan" value="Floor pan"></el-option>
 							</el-select>
 						</el-form-item>
 						<el-form-item label="温度限值">
-							<el-input></el-input>
-							℃
+							<el-input value="50">
+								<span slot="append">℃</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item label="热源温度">
-							<el-input></el-input>
-							℃
-						</el-form-item>
-						<el-form-item label="热源距离">
-							<el-input></el-input>
-							mm
+							<el-input value="100">
+								<span slot="append">℃</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item label="环境温度">
-							<el-input></el-input>
-							℃
+							<el-input value="32">
+								<span slot="append">℃</span>
+							</el-input>
+						</el-form-item>
+						<el-form-item label="热源距离">
+							<el-input value="100">
+								<span slot="append">mm</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item label="对流系数">
-							<el-input></el-input>
-							w/m2*k
+							<el-input value="3.5">
+								<span slot="append">w/m2*k</span>
+							</el-input>
 						</el-form-item>
 						<el-form-item>
 							<el-button type="primary" @click="onSubmit">计算</el-button>
@@ -88,6 +100,9 @@
 				form: {
 					name: '',
 					region: '',
+					valueOne:'',
+					valueTwo:'',
+					valueThree:'',
 					date1: '',
 					date2: '',
 					delivery: false,
@@ -199,6 +214,9 @@
 		/deep/ .el-form-item {
 			margin-bottom: 10px;
 		}
+		/deep/ .el-input-group__append, .el-input-group__prepend{
+			padding: 0 10px;
+		}
 		.right {
 			flex: 1;
 			padding: 20px;
@@ -206,7 +224,6 @@
 			.box-card {
 				.el-input {
 					width: 220px;
-					display: inline-block;
 				}
 				.el-select {
 					display: block;

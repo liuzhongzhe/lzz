@@ -9,7 +9,7 @@
 					<span>权限列表</span>
 				</div>
 				<div class="add_new">
-					<el-button type="primary">新增</el-button>
+					<i-button type="primary">新增</i-button>
 				</div>
 				<div class="list">
 					<div class="list_title">
@@ -29,9 +29,9 @@
 						<span>{{item.five}}</span>
 						<span>{{item.six}}</span>
 						<span>
-							<el-button type="info">停用</el-button>
-							<el-button type="warning">编辑</el-button>
-							<el-button type="danger">删除</el-button>
+							<i-button type="info">停用</i-button>
+							<i-button type="warning">编辑</i-button>
+							<i-button type="error">删除</i-button>
 						</span>
 					</div>
 				</div>
@@ -134,9 +134,9 @@
 			.add_new{
 				padding: 20px;
 				margin-bottom: 10px;
-				.el-button{
+				.ivu-btn{
 					float: right;
-					padding: 8px 20px;
+					padding: 4px 20px;
 				}
 			}
 			.list {
@@ -173,7 +173,7 @@
 						border-right: 1px solid rgb(221, 221, 221);
 						&:last-child {
 							border-right: none;
-							.el-button {
+							.ivu-btn {
 								padding: 4px;
 							}
 						}

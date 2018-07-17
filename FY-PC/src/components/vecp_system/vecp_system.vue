@@ -10,57 +10,63 @@
                 </div>
                 <div class="button">
                     <span>车型平台</span>
-                    <el-button type="primary">查询</el-button>
-                    <el-button type="success">加入对比</el-button>
+                    <i-button type="primary">查询</i-button>
+                    <i-button type="success">加入对比</i-button>
                 </div>
                 <div class="selectList" style="margin-top: 10px;">
                     <div class="sec">
                         <span>车型平台：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueOne">
+                            <el-option value="E2-2" label="E2-2"></el-option>
+                            <el-option value="D2XX" label="D2XX"></el-option>
+                            <el-option value="GEM" label="GEM"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>车型名称：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueTwo">
+                            <el-option value="ELLB-2" label="ELLB-2"></el-option>
+                            <el-option value="D2UB" label="D2UB"></el-option>
+                            <el-option value="D2SB" label="D2SB"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>车型年份：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueThree">
+                            <el-option value="MY17" label="MY17"></el-option>
+                            <el-option value="MY16" label="MY16"></el-option>
+                            <el-option value="MY15" label="MY15"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>发动机：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueFour">
+                            <el-option value="L2B" label="L2B"></el-option>
+                            <el-option value="L3T" label="L3T"></el-option>
+                            <el-option value="L3Z" label="L3Z"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>变速箱：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueFive">
+                            <el-option value="CVT" label="CVT"></el-option>
+                            <el-option value="DCT" label="DCT"></el-option>
+                            <el-option value="M01" label="M01"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>驱动形式：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueSix">
+                            <el-option value="AWD" label="AWD"></el-option>
+                            <el-option value="FWD" label="FWD"></el-option>
+                            <el-option value="RWD" label="RWD"></el-option>
                         </el-select>
                     </div>
                     <div class="sec">
                         <span>左/右驾：</span>
-                        <el-select>
-                            <el-option>1</el-option>
-                            <el-option>2</el-option>
+                        <el-select v-model="pro.valueSeven">
+                            <el-option value="LHD" label="LHD"></el-option>
+                            <el-option value="RHD" label="RHD"></el-option>
                         </el-select>
                     </div>
                 </div>
@@ -138,34 +144,34 @@
                                     <span style="border-left: none;">试验结果</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>115</span>
+                                    <span>124</span>
+                                    <span>131</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>140</span>
+                                    <span>150</span>
+                                    <span>160</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>132</span>
+                                    <span>132</span>
+                                    <span>140</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>87</span>
+                                    <span>100</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>64</span>
+                                    <span>74</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>NA</span>
+                                    <span>NA</span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="tableList">
@@ -173,34 +179,34 @@
                                     <span style="border-left: none;">虚拟结果</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>116</span>
+                                    <span>125</span>
+                                    <span>132</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>141</span>
+                                    <span>151</span>
+                                    <span>161</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>133</span>
+                                    <span>133</span>
+                                    <span>141</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>88</span>
+                                    <span>100</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>63</span>
+                                    <span>73</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>na</span>
+                                    <span>na</span>
+                                    <span></span>
                                 </div>
                             </div>
                             <div class="tableList">
@@ -208,34 +214,34 @@
                                     <span style="border-left: none;">VTS要求</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>2011</span>
+                                    <span>12</span>
+                                    <span>13</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>14</span>
+                                    <span>15</span>
+                                    <span>16</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>17</span>
+                                    <span>18</span>
+                                    <span>19</span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>88</span>
+                                    <span>100</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>65</span>
+                                    <span>75</span>
+                                    <span></span>
                                 </div>
                                 <div>
-                                    <span>a</span>
-                                    <span>b</span>
-                                    <span>c</span>
+                                    <span>na</span>
+                                    <span>n1</span>
+                                    <span></span>
                                 </div>
                             </div>
                         </div>
@@ -251,49 +257,49 @@
                             <div class="twoList">
                                 <div>
                                     <span>总体开口面积</span>
-                                    <span></span>
+                                    <span>1.0</span>
                                 </div>
                                 <div>
                                     <span>Idle,Fan On</span>
-                                    <span></span>
+                                    <span>2.0</span>
                                     <span>50kph,Fan On</span>
-                                    <span></span>
+                                    <span>3.0</span>
                                 </div>
                                 <div>
                                     <span>90kph</span>
-                                    <span></span>
+                                    <span>4.0</span>
                                 </div>
                             </div>
                             <div class="twoList">
                                 <div>
                                     <span>正投影面积</span>
-                                    <span></span>
+                                    <span>11.0</span>
                                 </div>
                                 <div>
                                     <span>50kph,Fan On</span>
-                                    <span></span>
+                                    <span>5.0</span>
                                     <span>Vmax</span>
-                                    <span></span>
+                                    <span>6.0</span>
                                 </div>
                                 <div>
                                     <span>120kph</span>
-                                    <span></span>
+                                    <span>7.0</span>
                                 </div>
                             </div>
                             <div class="twoList">
                                 <div>
                                     <span>风扇功率</span>
-                                    <span></span>
+                                    <span>12.0</span>
                                 </div>
                                 <div>
                                     <span>Idle,Fan On</span>
-                                    <span></span>
+                                    <span>8.0</span>
                                     <span>50kph,Fan On</span>
-                                    <span></span>
+                                    <span>9.0</span>
                                 </div>
                                 <div>
                                     <span>90kph</span>
-                                    <span></span>
+                                    <span>10.0</span>
                                 </div>
                             </div>
                         </div>
@@ -311,27 +317,27 @@
                             <div class="threeList">
                                 <div>
                                     <span>Length</span>
-                                    <span></span>
+                                    <span>657.0</span>
                                 </div>
                                 <div>
                                     <span>No. of Tubes</span>
-                                    <span></span>
+                                    <span>45</span>
                                 </div>
                                 <div>
                                     <span>Flow in Front View</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Primary Inlet Temp</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Air Temp</span>
                                     <span class="ELSELECT">
-                                        <el-select style="height: 20px;">
-                                            <el-option>20</el-option>
-                                            <el-option>30</el-option>
-                                            <el-option>50</el-option>
+                                        <el-select style="height: 20px;" @change="changeSelectResultTableThree" v-model="pro.valueEight">
+                                            <el-option value="20" label="20"></el-option>
+                                            <el-option value="30" label="30"></el-option>
+                                            <el-option value="50" label="50"></el-option>
                                         </el-select>
                                     </span>
                                 </div>
@@ -339,80 +345,80 @@
                             <div class="threeList">
                                 <div>
                                     <span>Height</span>
-                                    <span></span>
+                                    <span>329.8</span>
                                 </div>
                                 <div>
                                     <span>No. of Passes</span>
-                                    <span></span>
+                                    <span>2</span>
                                 </div>
                                 <div>
                                     <span>Recirculated Flow</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Auxiliary Inlet Temp</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Air Density</span>
-                                    <span></span>
+                                    <span>{{pro.valueTen}}</span>
                                 </div>
                             </div>
                             <div class="threeList">
                                 <div>
                                     <span>Thickness</span>
-                                    <span></span>
+                                    <span>12.0</span>
                                 </div>
                                 <div>
                                     <span>No. of Raws</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Cp</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Du</span>
-                                    <span></span>
+                                    <span>NA</span>
                                 </div>
                                 <div>
                                     <span>Air Viscosity</span>
-                                    <span></span>
+                                    <span>{{pro.valueNine}}</span>
                                 </div>
                             </div>
                         </div>
                         <div style="display: inline-block; vertical-align: top;margin-top: 30px;" class="resultTableFour">
                             <div class="sec">
                                 <span>Fan Radius</span>
-                                <span></span>
+                                <span>215</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Type</span>
-                                <span></span>
+                                <span>Single</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.A</span>
-                                <span></span>
+                                <span>1.0</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.B</span>
-                                <span></span>
+                                <span>6.0</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.C</span>
-                                <span></span>
+                                <span>2.0</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.D</span>
-                                <span></span>
+                                <span>3.0</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.E</span>
-                                <span></span>
+                                <span>4.0</span>
                             </div>
                             <div class="sec">
                                 <span>Fan Coffe.F</span>
-                                <span></span>
+                                <span>5.0</span>
                             </div>
                         </div>
                         <div id="myChart" style="display: inline-block;margin-top: 20px;">
@@ -474,8 +480,12 @@
                     <el-tab-pane label="对比显示结果" name="name2">
                         <div style="background: #68ab82;line-height: 38px;color: #000;display: block;">
                             <span style="width: 130px;display: inline-block;text-align: left;text-indent: 2px;border: none;text-align: center;">对比项</span>
-                            <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareOne</span>
-                            <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareTwo</span>
+                            <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareOne
+                                <el-button type="danger" icon="el-icon-delete" circle style="margin-left: 2px;"></el-button>
+                            </span>
+                            <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareTwo
+                                <el-button type="danger" icon="el-icon-delete" circle style="margin-left: 2px;"></el-button>
+                            </span>
                         </div>
                         <div class="title">
                             <img v-show="dllqxnShow" @click="dllqxnShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
@@ -494,14 +504,14 @@
                                     <span>VTS要求</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                    <span>115</span>
+                                    <span>124</span>
+                                    <span>131</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                   <span>116</span>
+                                   <span>128</span>
+                                   <span>132</span>
                                 </div>
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Exc.</span>
@@ -512,14 +522,14 @@
                                     <span>VTS要求</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                   <span>155</span>
+                                   <span>167</span>
+                                   <span>141</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                    <span>131</span>
+                                    <span>108</span>
+                                    <span>144</span>
                                 </div>
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Ext.</span>
@@ -530,14 +540,14 @@
                                     <span>VTS要求</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                    <span>135</span>
+                                    <span>124</span>
+                                    <span>167</span>
                                 </div>
                                 <div class="compareOneCon">
-                                    <span>aa</span>
-                                    <span>bb</span>
-                                    <span>cc</span>
+                                    <span>175</span>
+                                    <span>114</span>
+                                    <span>121</span>
                                 </div>
                             </div>
                             <div>
@@ -840,14 +850,14 @@
                                     <span>风扇功率</span>
                                 </div>
                                 <div>
-                                    <span>uips</span>
-                                    <span>uips</span>
-                                    <span>uips</span>
+                                    <span>1.0</span>
+                                    <span>2.0</span>
+                                    <span>3.0</span>
                                 </div>
                                 <div>
-                                    <span>uips</span>
-                                    <span>uips</span>
-                                    <span>uips</span>
+                                    <span>1.1</span>
+                                    <span>2.2</span>
+                                    <span>3.6</span>
                                 </div>
                             </div>
                             <div class="compareTableTwoList">
@@ -860,18 +870,18 @@
                                     <span>Vmax</span>
                                 </div>
                                 <div>
-                                    <span>uips</span>
-                                    <span>usfsfips</span>
-                                    <span>ddsaf</span>
-                                    <span>wer</span>
-                                    <span>ddsutysaf</span>
+                                    <span>4.0</span>
+                                    <span>5.0</span>
+                                    <span>6.0</span>
+                                    <span>7.0</span>
+                                    <span>8.0</span>
                                 </div>
                                 <div>
-                                    <span>uips</span>
-                                    <span>usfsfips</span>
-                                    <span>ddsaf</span>
-                                    <span>wer</span>
-                                    <span>ddsutysaf</span>
+                                    <span>4.1</span>
+                                    <span>5.6</span>
+                                    <span>6.7</span>
+                                    <span>7.5</span>
+                                    <span>8.6</span>
                                 </div>
                             </div>
                             <div class="compareTableTwoList">
@@ -882,14 +892,14 @@
                                     <span>Vmax</span>
                                 </div>
                                 <div>
-                                    <span>ddsaf</span>
-                                    <span>wer</span>
-                                    <span>ddsutysaf</span>
+                                    <span>9.0</span>
+                                    <span>10.0</span>
+                                    <span>11.0</span>
                                 </div>
                                 <div>
-                                    <span>ddsaf</span>
-                                    <span>wer</span>
-                                    <span>ddsutysaf</span>
+                                    <span>9.5</span>
+                                    <span>10.7</span>
+                                    <span>11.3</span>
                                 </div>
                             </div>
                         </div>
@@ -913,51 +923,51 @@
                                 <span>Recirculated Flow</span>
                                 <span>Primary Inlet Temp</span>
                                 <span>Auxiliary</span>
-                                <span>Cp</span>
-                                <span>Du</span>
                                 <span>Air Temp
-                                    <el-select style="width: 70px;" placeholder="">
-                                        <el-option>20</el-option>
-                                        <el-option>30</el-option>
-                                        <el-option>50</el-option>
+                                    <el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
+                                        <el-option value="20" label="20"></el-option>
+                                        <el-option value="30" label="30"></el-option>
+                                        <el-option value="50" label="50"></el-option>
                                     </el-select>
                                 </span>
                                 <span>Air Density</span>
                                 <span>Air Viscosity</span>
+                                <span>Cp</span>
+                                <span>Du</span>
                             </div>
                             <div>
-                                <span>sf</span>
-                                <span>sfs</span>
-                                <span>rtr</span>
-                                <span>Nubes</span>
-                                <span>Nsses</span>
-                                <span>Noaws</span>
-                                <span>Floiew</span>
-                                <span>Recirculatow</span>
+                                <span>652.0</span>
+                                <span>321.2</span>
+                                <span>12.0</span>
+                                <span>NA</span>
+                                <span>NA</span>
+                                <span>45</span>
+                                <span>3.2</span>
+                                <span>5.3</span>
                                 <span>Cp</span>
-                                <span>imaremp</span>
-                                <span>xiliary</span>
-                                <span>uiyu</span>
-                                <span>tyuwmp</span>
-                                <span>sfnsity</span>
-                                <span>rtebcosity</span>
+                                <span>9.3</span>
+                                <span>NA</span>
+                                <span>{{pro.valueNine}}</span>
+                                <span>{{pro.valueTen}}</span>
+                                <span>NA</span>
+                                <span>3.9</span>
                             </div>
                             <div>
-                                <span>sf</span>
-                                <span>sfs</span>
-                                <span>rtr</span>
-                                <span>Nubes</span>
-                                <span>Nsses</span>
-                                <span>Noaws</span>
-                                <span>Floiew</span>
-                                <span>Recirculatow</span>
+                                <span>782.6</span>
+                                <span>452.3</span>
+                                <span>13.1</span>
+                                <span>NA</span>
+                                <span>NA</span>
+                                <span>37</span>
+                                <span>7.8</span>
+                                <span>6.7</span>
                                 <span>Cp</span>
-                                <span>imaremp</span>
-                                <span>xiliary</span>
-                                <span>uiyu</span>
-                                <span>tyuwmp</span>
-                                <span>sfnsity</span>
-                                <span>rtebcosity</span>
+                                <span>7.5</span>
+                                <span>NA</span>
+                                <span>{{pro.valueNine}}</span>
+                                <span>{{pro.valueTen}}</span>
+                                <span>NA</span>
+                                <span>7.1</span>
                             </div>
                         </div>
                         <div class="compareTableThree" v-if="qdlqmkjgShow">
@@ -975,24 +985,24 @@
                                 <span>Fan Coffe.F</span>
                             </div>
                             <div>
-                                <span>adius</span>
-                                <span>ype</span>
-                                <span>Faffe.A</span>
-                                <span>SRFWEoffe.B</span>
-                                <span>CBoffe.C</span>
-                                <span>FWERffe.D</span>
-                                <span>DFGe.E</span>
-                                <span>ERTffe.F</span>
+                                <span>99</span>
+                                <span>1.0</span>
+                                <span>2.0</span>
+                                <span>3.0</span>
+                                <span>4.0</span>
+                                <span>5.0</span>
+                                <span>6.0</span>
+                                <span>7.0</span>
                             </div>
                             <div>
-                                <span>sdfdius</span>
-                                <span>qweType</span>
-                                <span>sdfdfe.A</span>
-                                <span>Fsfoffe.B</span>
-                                <span>weroffe.C</span>
-                                <span>Fan Coffe.D</span>
-                                <span>hrtoffe.E</span>
-                                <span>yuiyfe.F</span>
+                                <span>1.3</span>
+                                <span>1.5</span>
+                                <span>2.1</span>
+                                <span>3.7</span>
+                                <span>5.7</span>
+                                <span>5.7</span>
+                                <span>6.7</span>
+                                <span>7.3</span>
                             </div>
                             <i-button @click="drawLineTwo" style="display: block;margin-top: 10px;" type="primary">查看曲线图</i-button>
                             <div style="display: block;width: 600px;height:400px;" id="myChartTwo">
@@ -1013,8 +1023,20 @@
         },
         data() {
             return {
+                pro: {
+                    valueOne: '',
+                    valueTwo: '',
+                    valueThree: '',
+                    valueFour: '',
+                    valueFive: '',
+                    valueSix: '',
+                    valueSeven: '',
+                    valueEight: '',
+                    valueNine: '1.0',
+                    valueTen: '1.1',
+                },
                 textar: ['Condenser', 'CAC', 'Radiator', 'LTR'],
-                navInd: '1',
+                navInd: '2',
                 dllqxnShow: true,
                 qdkkjflShow: true,
                 qdlqmkjgShow: true
@@ -1025,6 +1047,18 @@
             this.drawLine()
         },
         methods: {
+			changeSelectResultTableThree(value){
+				if(value ==='20'){
+					this.pro.valueNine = 2.0
+					this.pro.valueTen = 2.1
+				}else if(value ==='30'){
+					this.pro.valueNine = 3.0
+					this.pro.valueTen = 3.1
+				}else{
+					this.pro.valueNine = 5.0
+					this.pro.valueTen = 5.1
+				}
+			},
             drawLine() {
                 let myChart = this.$echarts.init(document.getElementById('myChart'))
                 myChart.setOption({
@@ -1139,7 +1173,7 @@
 
     .vecp_system {
         display: flex;
-        .el-button {
+        .ivu-btn {
             padding: 5px;
         }
         .ivu-tabs {
@@ -1152,17 +1186,21 @@
         .right {
             flex: 1;
             padding: 20px;
+            /deep/ .el-button.is-circle {
+                padding: 5px;
+            }
             /deep/ .el-input__inner {
                 height: 26px;
-                line-height: 26px;
+                line-height: 20px;
             }
             /deep/ .el-card__header {
                 background: #eff0dc;
                 padding: 14px 20px !important;
             }
             /deep/ .el-input__icon {
-                line-height: 26px;
+                line-height: 20px;
             }
+
             .compareTableThree {
                 >div {
                     display: inline-block;
@@ -1181,9 +1219,11 @@
                 .compareTableTwoList {
                     >span {
                         display: block;
-                        line-height: 25px;
                         background: #d4d4aa;
                         text-indent: 1em;
+                        line-height: 34px;
+                        background: #c1a075;
+                        text-indent: 2px;
                     }
                     >div {
                         display: inline-block;

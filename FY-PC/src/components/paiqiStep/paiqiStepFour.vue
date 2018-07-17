@@ -14,7 +14,7 @@
 				<div class="sec">
 					<div>
 						<div style="display: inline-block;">
-							<el-input style="width: 222px;" v-model="value1"></el-input>
+							<el-input style="width: 230px;" v-model="value1"></el-input>
 							<div class="list">
 								<ul>
 									<li class="listOne" v-for="(item,index) in textAr1" @click="chooseValue1(item,index,'valueIndex1')" :class="{'active':item.checked =='true'}">
@@ -25,20 +25,42 @@
 						</div>
 					</div>
 					<div>
-						<span>Viscous Resistance：</span>
+						<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="158">
+							<FormItem prop="wgzzl" label="Viscous Resistance：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">1/m²</span>
+							</FormItem>
+							<FormItem prop="wgzzl" label="Viscous Resistance：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+							</FormItem>
+							<FormItem prop="mbzl" label="Inertial Resistance：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">1/m</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Inertial Resistance：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+							</FormItem>
+							<br/>
+							<!--
+							<FormItem>-->
+								<i-button @click="apply('xxx',valueIndex1)" type="ghost" style="margin-left: 30px;">应用</i-button>
+							<!--</FormItem>-->
+						</Form>
+						
+						<!--<span>Viscous Resistance：</span>
 						<el-input></el-input>1/m²
 						<span>Inertial Resistance：</span>
-						<el-input></el-input>1/m
+						<el-input></el-input>1/m-->
 					</div>
-					<div>
+					<!--<div>
 						<span>方向面参考：</span>
 						<el-input></el-input>
 						<span>Direction：</span>
 						<el-input></el-input>
-					</div>
-					<div>
-						<el-button @click="apply('xxx',valueIndex1)">应用</el-button>
-					</div>
+					</div>-->
+					<!--<div>
+						<i-button @click="apply('xxx',valueIndex1)" type="ghost">应用</i-button>
+					</div>-->
 				</div>
 			</div>
 			<div class="info">
@@ -57,22 +79,47 @@
 						</div>
 					</div>
 					<div>
-						<span>Total Temperature：</span>
+						<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="158">
+							<FormItem prop="wgzzl" label="Total Temperature：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">C</span>
+							</FormItem>
+							<FormItem prop="wgzzl" label="Gauge Pressure：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">kPa</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Mass Flow Rate：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">kg/s</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Turbulent Intensity：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">%</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Hydraulic Diameter：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">m</span>
+							</FormItem>
+							<!--<FormItem>-->
+							<!--	<div style="width: 195px;"></div>-->
+							<!--</FormItem>-->
+							<br/>
+								<i-button @click="apply('xxx',valueIndex1)" type="ghost" style="margin-left: 30px;">应用</i-button>
+						</Form>
+						
+					<!--	<span>Total Temperature：</span>
 						<el-input></el-input>C
 						<span>Mass Flow Rate：</span>
 						<el-input></el-input>kg/s
 						<span>Hydraulic Diameter：</span>
-						<el-input></el-input>m
+						<el-input></el-input>m-->
 					</div>
-					<div>
+					<!--<div>
 						<span>Gauge Pressure：</span>
 						<el-input></el-input>kPa
 						<span>Turbulent Intensity：</span>
 						<el-input></el-input>%
-					</div>
-					<div>
-						<el-button @click="apply('ooo',valueIndex2)">应用</el-button>
-					</div>
+					</div>-->
 				</div>
 			</div>
 			<div class="info">
@@ -91,20 +138,36 @@
 						</div>
 					</div>
 					<div>
-						<span>Backflow Temperature：</span>
-						<el-input></el-input>C
-						<span>Hydraulic Diameter：</span>
-						<el-input></el-input>m
+						<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="158">
+							<FormItem prop="wgzzl" label="Backflow Temperature：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">C</span>
+							</FormItem>
+							<FormItem prop="wgzzl" label="Gauge Pressure：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">m</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Hydraulic Diameter：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">kg/s</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Turbulent Intensity：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">%</span>
+							</FormItem>
+							<br/>
+								<i-button @click="apply('xxx',valueIndex1)" type="ghost" style="margin-left: 30px;">应用</i-button>
+						</Form>
 					</div>
-					<div>
+					<!--<div>
 						<span>Gauge Pressure：</span>
 						<el-input></el-input>kPa
 						<span>Turbulent Intensity：</span>
 						<el-input></el-input>%
-					</div>
-					<div>
-						<el-button>应用</el-button>
-					</div>
+					</div>-->
+					<!--<div>
+						<i-button type="ghost">应用</i-button>
+					</div>-->
 				</div>
 			</div>
 			<div class="info">
@@ -123,18 +186,37 @@
 						</div>
 					</div>
 					<div>
-						<span>Wall Thickness：</span>
+						<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="158">
+							<FormItem prop="wgzzl" label="Wall Thickness：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">C</span>
+							</FormItem>
+							<FormItem prop="wgzzl" label="激活Shell Conduction">
+								<el-checkbox v-model="checked"> </el-checkbox>
+							</FormItem>
+							<FormItem prop="mbzl" label="Material：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">kg/s</span>
+							</FormItem>
+							<!--<FormItem>-->
+							<!--	<div style="width: 195px;"></div>-->
+							<!--</FormItem>-->
+								<br/>
+									<i-button @click="apply('xxx',valueIndex1)" type="ghost" style="margin-left: 30px;">应用</i-button>
+						</Form>
+						
+						<!--<span>Wall Thickness：</span>
 						<el-input></el-input>m
 						<span>Material：</span>
-						<el-input></el-input>
+						<el-input></el-input>-->
 					</div>
-					<div>
+					<!--<div>
 						<el-checkbox v-model="checked">激活Shell </el-checkbox>
 						<a style="display: inline-block;margin-right: 10px;margin-top: 30px;color: #000000;">Conduction</a>
 					</div>
 					<div>
-						<el-button>应用</el-button>
-					</div>
+						<i-button type="ghost">应用</i-button>
+					</div>-->
 				</div>
 			</div>
 			<div class="info">
@@ -153,6 +235,36 @@
 						</div>
 					</div>
 					<div>
+						<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="158">
+							<FormItem prop="wgzzl" label="Wall Thickness：">
+								<Input type="text"   v-model="formCustom.wgzzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">m</span>
+							</FormItem>
+							<FormItem prop="wgzzl" label="激活Shell Conduction">
+								<el-checkbox v-model="checked"> </el-checkbox>
+							</FormItem>
+							<FormItem prop="mbzl" label="Material：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:  195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">m</span>
+							</FormItem>
+							<FormItem prop="mbzl" label="Free Steam Temperature：">
+								<Input   type="text" v-model="formCustom.mbzl" number style="width:195px;"></Input>
+								<span style="width: 30px; display: inline-block;text-indent: 2px;">C</span>
+							</FormItem>
+							<!--<FormItem>-->
+							<!--	<div style="width: 195px;"></div>-->
+							<!--</FormItem>-->
+								<br/>
+									<i-button @click="apply('xxx',valueIndex1)" type="ghost" style="margin-left: 30px;">应用</i-button>
+						</Form>
+						
+						<!--<span>Wall Thickness：</span>
+						<el-input></el-input>m
+						<span>Material：</span>
+						<el-input></el-input>-->
+					</div>
+				<!--	
+					<div>
 						<span>Wall Thickness：</span>
 						<el-input></el-input>m
 						<span>Material：</span>
@@ -167,8 +279,8 @@
 						</div>
 					</div>
 					<div>
-						<el-button>应用</el-button>
-					</div>
+						<i-button type="ghost">应用</i-button>
+					</div>-->
 				</div>
 			</div>
 		</el-card>
@@ -182,7 +294,36 @@
 <script>
 	export default {
 		data() {
+			const validateAge = (rule, value, callback) => {
+				if (!value) {
+					return callback(new Error(' '));
+				}
+				if (!Number.isInteger(value)) {
+					callback(new Error(''));
+				} else {
+					callback();
+				}
+			};
 			return {
+				formCustom: {
+					wgzzl: '',
+					mbzl: '',
+					ddcs:''
+				},
+				ruleCustom: {
+					wgzzl: [{
+						validator: validateAge,
+						trigger: 'change'
+					}],
+					mbzl: [{
+						validator: validateAge,
+						trigger: 'change'
+					}],
+					ddcs: [{
+						validator: validateAge,
+						trigger: 'change'
+					}],
+				},
 				labelState: false,
 				checked: true,
 				value1: '',
@@ -259,22 +400,6 @@
 					}
 
 				],
-				options: [{
-					value: '选项1',
-					label: '黄金糕'
-				}, {
-					value: '选项2',
-					label: '双皮奶'
-				}, {
-					value: '选项3',
-					label: '蚵仔煎'
-				}, {
-					value: '选项4',
-					label: '龙须面'
-				}, {
-					value: '选项5',
-					label: '北京烤鸭'
-				}],
 				shiftStart: 0,
 				shiftEnd: 0
 			}
@@ -384,6 +509,12 @@
 		-moz-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
+		/deep/ .ivu-form-item{
+			display: inline-block;
+		}
+		/deep/ .ivu-form-item-error-tip {
+			display: none;
+		}
 		/deep/ .el-input__inner {
 			height: 34px;
 		}
@@ -403,6 +534,9 @@
 			margin: 0 0;
 			margin-left: 30px;
 		}
+		/deep/ .el-checkbox{
+			width: 120px;
+		}
 		.info {
 			>span {
 				display: block;
@@ -412,15 +546,15 @@
 				color: rgb(167, 35, 46);
 			}
 			.el-input {
-				width: 200px;
+				width:  195px;
 			}
 			>.sec {
 				margin: 20px 0;
 				display: flex;
 				.list {
 					margin-top: 5px;
-					width: 220px;
-					height: 200px;
+					width: 230px;
+					height:  195px;
 					border-radius: 4px;
 					overflow-y: scroll;
 					border: 1px solid rgb(220, 223, 230);
@@ -441,6 +575,9 @@
 				}
 				>div {
 					flex: 1;
+					&:first-child{
+						flex: 0 260px;
+					}
 					span {
 						display: inline-block;
 						margin-bottom: 5px;
@@ -463,7 +600,7 @@
 					span {
 						display: block;
 						margin-bottom: 5px;
-						width: 180px !important;
+						width: 180px ;
 						text-align: left !important;
 					}
 					.el-input {

@@ -113,6 +113,10 @@
                     }
                 ],
                 typeArOne: [{
+                        name: "发动机冷却性能系统",
+                        imgUrl: 'static/a9.png',
+                        detail: '对汽车空调系统的性能进行CFD仿真计算。'
+                    }, {
                         name: "自然风险评估系统",
                         imgUrl: 'static/a5.png',
                         detail: '对汽车空调系统的性能进行CFD仿真计算。'
@@ -205,7 +209,10 @@
                     case "自然风险评估系统":
                         this.$router.push('/natural_risk');
                         break;
-                        natural_risk
+					case "发动机冷却性能系统":
+						this.$router.push('/vecp_system');
+						break;
+                        
 
                 }
             },
@@ -284,7 +291,7 @@
                 font-size: 14px;
             }
             >.detail {
-                height: 80px;
+                height: 90px;
                 background: rgba(139, 26, 26, 0.7);
                 display: block;
                 position: absolute;
@@ -329,9 +336,9 @@
             flex: 1;
             padding: 20px;
         }
-		/deep/ .ivu-card-head {
-			background: #eff0dc;
-			padding: 14px 20px !important;
-		}
+        /deep/ .ivu-card-head {
+            background: #eff0dc;
+            padding: 14px 20px !important;
+        }
     }
 </style>

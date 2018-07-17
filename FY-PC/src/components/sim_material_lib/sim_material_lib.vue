@@ -9,8 +9,8 @@
 					<span>仿真材料库</span>
 				</div>
 				<div class="button">
-					<el-button type="danger">导入材料文件</el-button>
-					<el-button type="primary">导出材料文件</el-button>
+					<i-button type="success">导出材料文件</i-button>
+					<i-button type="info">导入材料文件 </i-button>
 				</div>
 				<div class="sec">
 					<span>流体材料</span>
@@ -27,8 +27,8 @@
 									<el-input style="width: 80%;" v-show="editShowIndex == index" v-model="item.name" :value="item.name"></el-input>
 								</li>
 								<li style="vertical-align: top;">
-									<el-button @click="edit(index)">编辑</el-button>
-									<el-button @click="save">保存</el-button>
+									<i-button @click="edit(index)" type="ghost">编辑</i-button>
+									<i-button @click="save"  type="primary">保存</i-button>
 								</li>
 							</ul>
 
@@ -150,8 +150,8 @@
 		.right {
 			flex: 1;
 			padding: 20px;
-			.el-button{
-				padding: 8px 20px;
+			.ivu-btn{
+				padding: 4px 20px;
 			}
 			.sec {
 				margin: 10px 0;

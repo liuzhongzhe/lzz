@@ -66,17 +66,6 @@
 					</div>
 				</div>
 				<div class="secTwo">
-					
-					<!--<div class="sec">
-						<span class="title">Max Mach Number < </span>
-						<el-input-number size="medium" style="width: 120px;" v-model="num8" controls-position="right"></el-input-number>
-						<span>kPa @125g/s 800℃</span>
-					</div>
-					<div class="sec">
-						<span class="title">total_backpressure< </span>
-						<el-input type="number" style="width: 120px;" v-model="num8" controls-position="right"></el-input>
-						<span>kPa @125g/s 800℃</span>
-					</div>-->
 					<Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="140">
 						<p>Target：</p>
 						<FormItem label="Max Mach Number < " prop="maxmach">

@@ -9,7 +9,7 @@
 					<span>用户列表</span>
 				</div>
 				<div class="button">
-					<el-button type="primary">新增</el-button>
+					<i-button type="primary">新增</i-button>
 				</div>
 				<div class="sec">
 					<template>
@@ -46,7 +46,7 @@
 							</el-table-column>
 							<el-table-column label="操作">
 								<template slot-scope="scope">
-									<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+									<i-button size="mini" type="ghost" @click="handleEdit(scope.$index, scope.row)">编辑</i-button>
 								</template>
 							</el-table-column>
 						</el-table>
@@ -125,8 +125,8 @@
 			flex: 1;
 			padding: 20px;
 			.button{
-				.el-button{
-					padding: 8px 20px;
+				.ivu-btn{
+					padding: 4px 20px;
 					float: right;
 				}
 			}
