@@ -310,7 +310,6 @@
                                 <el-option>CAC</el-option>
                                 <el-option>Radiator</el-option>
                                 <el-option>LTR</el-option>
-                                <el-option>FAN</el-option>
                             </el-select>
                         </div>
                         <div class="resultTableThree">
@@ -387,56 +386,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="display: inline-block; vertical-align: top;margin-top: 30px;" class="resultTableFour">
-                            <div class="sec">
-                                <span>Fan Radius</span>
-                                <span>215</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Type</span>
-                                <span>Single</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.A</span>
-                                <span>1.0</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.B</span>
-                                <span>6.0</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.C</span>
-                                <span>2.0</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.D</span>
-                                <span>3.0</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.E</span>
-                                <span>4.0</span>
-                            </div>
-                            <div class="sec">
-                                <span>Fan Coffe.F</span>
-                                <span>5.0</span>
-                            </div>
-                        </div>
-                        <div id="myChart" style="display: inline-block;margin-top: 20px;">
-
-                        </div>
-                        <div class="title" style="margin-top: 0px;">
-                            <span>前端冷却模块CDS数据</span>
-                            <el-select style="width: 150px;">
-                                <el-option>Condenser</el-option>
-                                <el-option>CAC</el-option>
-                                <el-option>Radiator</el-option>
-                                <el-option>LTR</el-option>
-                                <el-option>FAN</el-option>
-                            </el-select>
-                        </div>
                         <div class="resultTableFive">
                             <div class="fiveTitle">
-                                <span></span>
+                                <span>前端冷却模块CDS数据</span>
                                 <span>0.027777778</span>
                                 <span>0.444444444</span>
                                 <span>0.061111111</span>
@@ -476,15 +428,59 @@
                                 <span>0.024648787</span>
                             </div>
                         </div>
+                        <div class="title" style="margin-top: 30px;">
+                            <span>风扇冷却模块结果</span>
+                        </div>
+
+                        <div style="display: inline-block; vertical-align:top;" class="resultTableFour">
+                            <div class="sec">
+                                <span>Fan Type</span>
+                                <span>Single</span>
+                            </div>
+                            <div class="sec">
+                                <span>Outer Radius</span>
+                                <span>215</span>
+                            </div>
+                            <div class="sec">
+                                <span>Inner Radius</span>
+                                <span>99</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.A</span>
+                                <span>1.0</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.B</span>
+                                <span>6.0</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.C</span>
+                                <span>2.0</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.D</span>
+                                <span>3.0</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.E</span>
+                                <span>4.0</span>
+                            </div>
+                            <div class="sec">
+                                <span>Fan Coffe.F</span>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                        <div id="myChart" style="display: inline-block;position: relative;bottom: 20px;left: 20px;">
+                        </div>
                     </el-tab-pane>
                     <el-tab-pane label="对比显示结果" name="name2">
                         <div style="background: #68ab82;line-height: 38px;color: #000;display: block;">
                             <span style="width: 130px;display: inline-block;text-align: left;text-indent: 2px;border: none;text-align: center;">对比项</span>
                             <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareOne
-                                <el-button type="danger" icon="el-icon-delete" circle style="margin-left: 2px;"></el-button>
+                                <el-button type="danger" icon="el-icon-close" circle style="margin-left: 2px;"></el-button>
                             </span>
                             <span style="width: 130px;display: inline-block;border: none;text-align: center;">conpareTwo
-                                <el-button type="danger" icon="el-icon-delete" circle style="margin-left: 2px;"></el-button>
+                                <el-button type="danger" icon="el-icon-close" circle style="margin-left: 2px;"></el-button>
                             </span>
                         </div>
                         <div class="title">
@@ -493,8 +489,11 @@
                             <span>动力冷却性能结果</span>
                         </div>
                         <div class="compareTableOne" v-if="dllqxnShow">
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">发动机水温</span>
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 0px;">
+                                <img v-show="dllqxnItemOneShow" @click="dllqxnItemOneShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemOneShow" @click="dllqxnItemOneShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> 发动机水温
+                            </span>
+                            <div v-if="dllqxnItemOneShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -509,9 +508,9 @@
                                     <span>131</span>
                                 </div>
                                 <div class="compareOneCon">
-                                   <span>116</span>
-                                   <span>128</span>
-                                   <span>132</span>
+                                    <span>116</span>
+                                    <span>128</span>
+                                    <span>132</span>
                                 </div>
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Exc.</span>
@@ -522,9 +521,9 @@
                                     <span>VTS要求</span>
                                 </div>
                                 <div class="compareOneCon">
-                                   <span>155</span>
-                                   <span>167</span>
-                                   <span>141</span>
+                                    <span>155</span>
+                                    <span>167</span>
+                                    <span>141</span>
                                 </div>
                                 <div class="compareOneCon">
                                     <span>131</span>
@@ -550,8 +549,11 @@
                                     <span>121</span>
                                 </div>
                             </div>
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">发动机油温</span>
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;">
+                                <img v-show="dllqxnItemTwoShow" @click="dllqxnItemTwoShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemTwoShow" @click="dllqxnItemTwoShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> 发动机油温
+                            </span>
+                            <div v-if="dllqxnItemTwoShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -607,8 +609,11 @@
                                     <span>cc</span>
                                 </div>
                             </div>
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">变速箱油温</span>
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">
+                                <img v-show="dllqxnItemThreeShow" @click="dllqxnItemThreeShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemThreeShow" @click="dllqxnItemThreeShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> 变速箱油温
+                            </span>
+                            <div v-if="dllqxnItemThreeShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -664,8 +669,11 @@
                                     <span>cc</span>
                                 </div>
                             </div>
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">风扇出风温度</span>
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075">
+                                <img v-show="dllqxnItemFourShow" @click="dllqxnItemFourShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemFourShow" @click="dllqxnItemFourShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> 风扇出风温度
+                            </span>
+                            <div v-if="dllqxnItemFourShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -721,8 +729,11 @@
                                     <span>cc</span>
                                 </div>
                             </div>
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">CAC出口温度</span>
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075">
+                                <img v-show="dllqxnItemFiveShow" @click="dllqxnItemFiveShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemFiveShow" @click="dllqxnItemFiveShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> CAC出口温度
+                            </span>
+                            <div v-if="dllqxnItemFiveShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -778,8 +789,12 @@
                                     <span>cc</span>
                                 </div>
                             </div>
-                            <div>
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">LTR水温</span>
+
+                            <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">
+                                <img v-show="dllqxnItemSixShow" @click="dllqxnItemSixShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!dllqxnItemSixShow" @click="dllqxnItemSixShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> LTR水温
+                            </span>
+                            <div v-if="dllqxnItemSixShow">
                                 <div>
                                     <span style="line-height: 25px;display: block;text-indent: 1em; width: 100%; background:#d4d4aa;">Con.</span>
                                 </div>
@@ -842,8 +857,11 @@
                             <span>前端开口和进风量结果</span>
                         </div>
                         <div class="compareTableTwo" v-if="qdkkjflShow">
-                            <div class="compareTableTwoList">
-                                <span>Openging(cm2)</span>
+                            <span>
+                                <img v-show="qdkkjflItemOneShow" @click="qdkkjflItemOneShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!qdkkjflItemOneShow" @click="qdkkjflItemOneShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> Openging(cm2)
+                            </span>
+                            <div class="compareTableTwoList" v-if="qdkkjflItemOneShow">
                                 <div>
                                     <span>总开口面积</span>
                                     <span>正投影面积</span>
@@ -860,8 +878,11 @@
                                     <span>3.6</span>
                                 </div>
                             </div>
-                            <div class="compareTableTwoList">
-                                <span>Shutter oPEN(CMM)</span>
+                            <span>
+                                <img v-show="qdkkjflItemTwoShow" @click="qdkkjflItemTwoShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!qdkkjflItemTwoShow" @click="qdkkjflItemTwoShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> Shutter oPEN(CMM)
+                            </span>
+                            <div class="compareTableTwoList" v-if="qdkkjflItemTwoShow">
                                 <div>
                                     <span>Idle,Fan On</span>
                                     <span>50kph,Fan On</span>
@@ -884,8 +905,11 @@
                                     <span>8.6</span>
                                 </div>
                             </div>
-                            <div class="compareTableTwoList">
-                                <span>Shutter Close(CMM)</span>
+                            <span>
+                                <img v-show="qdkkjflItemThreeShow" @click="qdkkjflItemThreeShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                                <img v-show="!qdkkjflItemThreeShow" @click="qdkkjflItemThreeShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;"> Shutter oPEN(CMM) Shutter Close(CMM)
+                            </span>
+                            <div class="compareTableTwoList" v-if="qdkkjflItemThreeShow">
                                 <div>
                                     <span>90kph</span>
                                     <span>120kph</span>
@@ -904,79 +928,288 @@
                             </div>
                         </div>
                         <div class="title">
-                            <img v-show="qdlqmkjgShow" @click="qdlqmkjgShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
-                            <img v-show="!qdlqmkjgShow" @click="qdlqmkjgShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
-                            <span>前端冷却模块结果</span>
+                        	<img v-show="qdlqmkShow" @click="qdlqmkShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                        	<img v-show="!qdlqmkShow" @click="qdlqmkShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                        	<span>前端冷却模块结果</span>
                         </div>
-                        <div class="compareTableThree" v-if="qdlqmkjgShow" v-for="item in textar">
-                            <div style="display: block;">
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">{{item}}</span>
-                            </div>
-                            <div>
-                                <span>Length</span>
-                                <span>Height</span>
-                                <span>Thickness</span>
-                                <span>No.of Tubes</span>
-                                <span>No.of Passes</span>
-                                <span>No.of Raws</span>
-                                <span>Flow in Front View</span>
-                                <span>Recirculated Flow</span>
-                                <span>Primary Inlet Temp</span>
-                                <span>Auxiliary</span>
-                                <span>Air Temp
-                                    <el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
-                                        <el-option value="20" label="20"></el-option>
-                                        <el-option value="30" label="30"></el-option>
-                                        <el-option value="50" label="50"></el-option>
-                                    </el-select>
-                                </span>
-                                <span>Air Density</span>
-                                <span>Air Viscosity</span>
-                                <span>Cp</span>
-                                <span>Du</span>
-                            </div>
-                            <div>
-                                <span>652.0</span>
-                                <span>321.2</span>
-                                <span>12.0</span>
-                                <span>NA</span>
-                                <span>NA</span>
-                                <span>45</span>
-                                <span>3.2</span>
-                                <span>5.3</span>
-                                <span>Cp</span>
-                                <span>9.3</span>
-                                <span>NA</span>
-                                <span>{{pro.valueNine}}</span>
-                                <span>{{pro.valueTen}}</span>
-                                <span>NA</span>
-                                <span>3.9</span>
-                            </div>
-                            <div>
-                                <span>782.6</span>
-                                <span>452.3</span>
-                                <span>13.1</span>
-                                <span>NA</span>
-                                <span>NA</span>
-                                <span>37</span>
-                                <span>7.8</span>
-                                <span>6.7</span>
-                                <span>Cp</span>
-                                <span>7.5</span>
-                                <span>NA</span>
-                                <span>{{pro.valueNine}}</span>
-                                <span>{{pro.valueTen}}</span>
-                                <span>NA</span>
-                                <span>7.1</span>
-                            </div>
+						<div class="compareTableThree" v-if="qdlqmkShow">
+							<div style="display: block;" ref="xxx" @click="xxx">
+								<span style="line-height: 34px;display: block; width: 100%; background:#c1a075;">
+									<img v-show="qdlqmkItemOneShow" @click="qdlqmkItemOneShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+									<img v-show="!qdlqmkItemOneShow" @click="qdlqmkItemOneShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+								 Condenser</span>
+							</div>
+							<div v-if="qdlqmkItemOneShow">
+								<div>
+									<span>Length</span>
+									<span>Height</span>
+									<span>Thickness</span>
+									<span>No.of Tubes</span>
+									<span>No.of Passes</span>
+									<span>No.of Raws</span>
+									<span>Flow in Front View</span>
+									<span>Recirculated Flow</span>
+									<span>Primary Inlet Temp</span>
+									<span>Auxiliary</span>
+									<span>Air Temp
+										<el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
+											<el-option value="20" label="20"></el-option>
+											<el-option value="30" label="30"></el-option>
+											<el-option value="50" label="50"></el-option>
+										</el-select>
+									</span>
+									<span>Air Density</span>
+									<span>Air Viscosity</span>
+									<span>Cp</span>
+									<span>Du</span>
+								</div>
+								<div>
+									<span>652.0</span>
+									<span>321.2</span>
+									<span>12.0</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>45</span>
+									<span>3.2</span>
+									<span>5.3</span>
+									<span>Cp</span>
+									<span>9.3</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>3.9</span>
+								</div>
+								<div>
+									<span>782.6</span>
+									<span>452.3</span>
+									<span>13.1</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>37</span>
+									<span>7.8</span>
+									<span>6.7</span>
+									<span>Cp</span>
+									<span>7.5</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>7.1</span>
+								</div>
+							</div>
+							
+							<div style="display: block;" ref="xxx" @click="xxx">
+								<span style="line-height: 34px;display: block; width: 100%; background:#c1a075;">
+									<img v-show="qdlqmkItemTwoShow" @click="qdlqmkItemTwoShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+									<img v-show="!qdlqmkItemTwoShow" @click="qdlqmkItemTwoShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+								 CAC</span>
+							</div>
+							<div v-if="qdlqmkItemTwoShow">
+								<div>
+									<span>Length</span>
+									<span>Height</span>
+									<span>Thickness</span>
+									<span>No.of Tubes</span>
+									<span>No.of Passes</span>
+									<span>No.of Raws</span>
+									<span>Flow in Front View</span>
+									<span>Recirculated Flow</span>
+									<span>Primary Inlet Temp</span>
+									<span>Auxiliary</span>
+									<span>Air Temp
+										<el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
+											<el-option value="20" label="20"></el-option>
+											<el-option value="30" label="30"></el-option>
+											<el-option value="50" label="50"></el-option>
+										</el-select>
+									</span>
+									<span>Air Density</span>
+									<span>Air Viscosity</span>
+									<span>Cp</span>
+									<span>Du</span>
+								</div>
+								<div>
+									<span>652.0</span>
+									<span>321.2</span>
+									<span>12.0</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>45</span>
+									<span>3.2</span>
+									<span>5.3</span>
+									<span>Cp</span>
+									<span>9.3</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>3.9</span>
+								</div>
+								<div>
+									<span>782.6</span>
+									<span>452.3</span>
+									<span>13.1</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>37</span>
+									<span>7.8</span>
+									<span>6.7</span>
+									<span>Cp</span>
+									<span>7.5</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>7.1</span>
+								</div>
+							</div>
+							
+							<div style="display: block;" ref="xxx" @click="xxx">
+								<span style="line-height: 34px;display: block; width: 100%; background:#c1a075;">
+									<img v-show="qdlqmkItemThreeShow" @click="qdlqmkItemThreeShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+									<img v-show="!qdlqmkItemThreeShow" @click="qdlqmkItemThreeShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+								Condenser CAC Radiator LTR</span>
+							</div>
+							<div v-if="qdlqmkItemThreeShow">
+								<div>
+									<span>Length</span>
+									<span>Height</span>
+									<span>Thickness</span>
+									<span>No.of Tubes</span>
+									<span>No.of Passes</span>
+									<span>No.of Raws</span>
+									<span>Flow in Front View</span>
+									<span>Recirculated Flow</span>
+									<span>Primary Inlet Temp</span>
+									<span>Auxiliary</span>
+									<span>Air Temp
+										<el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
+											<el-option value="20" label="20"></el-option>
+											<el-option value="30" label="30"></el-option>
+											<el-option value="50" label="50"></el-option>
+										</el-select>
+									</span>
+									<span>Air Density</span>
+									<span>Air Viscosity</span>
+									<span>Cp</span>
+									<span>Du</span>
+								</div>
+								<div>
+									<span>652.0</span>
+									<span>321.2</span>
+									<span>12.0</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>45</span>
+									<span>3.2</span>
+									<span>5.3</span>
+									<span>Cp</span>
+									<span>9.3</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>3.9</span>
+								</div>
+								<div>
+									<span>782.6</span>
+									<span>452.3</span>
+									<span>13.1</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>37</span>
+									<span>7.8</span>
+									<span>6.7</span>
+									<span>Cp</span>
+									<span>7.5</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>7.1</span>
+								</div>
+							</div>
+							
+							<div style="display: block;" ref="xxx" @click="xxx">
+								<span style="line-height: 34px;display: block; width: 100%; background:#c1a075;">
+									<img v-show="qdlqmkItemFourShow" @click="qdlqmkItemFourShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+									<img v-show="!qdlqmkItemFourShow" @click="qdlqmkItemFourShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+								Condenser CAC Radiator LTR</span>
+							</div>
+							<div v-if="qdlqmkItemFourShow">
+								<div>
+									<span>Length</span>
+									<span>Height</span>
+									<span>Thickness</span>
+									<span>No.of Tubes</span>
+									<span>No.of Passes</span>
+									<span>No.of Raws</span>
+									<span>Flow in Front View</span>
+									<span>Recirculated Flow</span>
+									<span>Primary Inlet Temp</span>
+									<span>Auxiliary</span>
+									<span>Air Temp
+										<el-select style="width: 70px;" @change="changeSelectResultTableThree" placeholder="">
+											<el-option value="20" label="20"></el-option>
+											<el-option value="30" label="30"></el-option>
+											<el-option value="50" label="50"></el-option>
+										</el-select>
+									</span>
+									<span>Air Density</span>
+									<span>Air Viscosity</span>
+									<span>Cp</span>
+									<span>Du</span>
+								</div>
+								<div>
+									<span>652.0</span>
+									<span>321.2</span>
+									<span>12.0</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>45</span>
+									<span>3.2</span>
+									<span>5.3</span>
+									<span>Cp</span>
+									<span>9.3</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>3.9</span>
+								</div>
+								<div>
+									<span>782.6</span>
+									<span>452.3</span>
+									<span>13.1</span>
+									<span>NA</span>
+									<span>NA</span>
+									<span>37</span>
+									<span>7.8</span>
+									<span>6.7</span>
+									<span>Cp</span>
+									<span>7.5</span>
+									<span>NA</span>
+									<span>{{pro.valueNine}}</span>
+									<span>{{pro.valueTen}}</span>
+									<span>NA</span>
+									<span>7.1</span>
+								</div>
+							</div>
+						</div>
+						<div class="title">
+                            <img v-show="fslqmkShow" @click="fslqmkShow=false" src="../../../static/reduce2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                            <img v-show="!fslqmkShow" @click="fslqmkShow=true" src="../../../static/plus2.png" width="15px" style="cursor: pointer;position: relative;top: 2px;">
+                            <span>风扇冷却模块结果</span>
                         </div>
-                        <div class="compareTableThree" v-if="qdlqmkjgShow">
+                        <div class="compareTableFour" v-if="fslqmkShow">
                             <div style="display: block;">
-                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">FAN</span>
+                                <span style="line-height: 34px;display: block; width: 100%; background:#c1a075;text-indent: 2px;">风扇冷却模块结果</span>
                             </div>
                             <div>
-                                <span>Fan Radius</span>
-                                <span>Fan Type</span>
+								<span>Fan Type</span>
+                                <span>Outer Radius</span>
+                                <span>Inner Radius</span>
                                 <span>Fan Coffe.A</span>
                                 <span>Fan Coffe.B</span>
                                 <span>Fan Coffe.C</span>
@@ -987,6 +1220,7 @@
                             <div>
                                 <span>99</span>
                                 <span>1.0</span>
+                                <span>1.0</span>
                                 <span>2.0</span>
                                 <span>3.0</span>
                                 <span>4.0</span>
@@ -996,6 +1230,7 @@
                             </div>
                             <div>
                                 <span>1.3</span>
+                                <span>1.5</span>
                                 <span>1.5</span>
                                 <span>2.1</span>
                                 <span>3.7</span>
@@ -1035,11 +1270,25 @@
                     valueNine: '1.0',
                     valueTen: '1.1',
                 },
-                textar: ['Condenser', 'CAC', 'Radiator', 'LTR'],
                 navInd: '2',
                 dllqxnShow: true,
-                qdkkjflShow: true,
-                qdlqmkjgShow: true
+                dllqxnItemOneShow: true,
+                dllqxnItemTwoShow: true,
+                dllqxnItemThreeShow: true,
+                dllqxnItemFourShow: true,
+                dllqxnItemFiveShow: true,
+                dllqxnItemSixShow: true,
+				qdkkjflShow: true,
+                qdkkjflItemOneShow: true,
+                qdkkjflItemTwoShow: true,
+                qdkkjflItemThreeShow: true,
+                qdlqmkShow: true,
+                qdlqmkItemOneShow: true,
+                qdlqmkItemTwoShow: true,
+                qdlqmkItemThreeShow: true,
+                qdlqmkItemFourShow: true,
+                qdlqmkItemFiveShow: true,
+                fslqmkShow: true
             }
         },
         mounted() {
@@ -1047,18 +1296,21 @@
             this.drawLine()
         },
         methods: {
-			changeSelectResultTableThree(value){
-				if(value ==='20'){
-					this.pro.valueNine = 2.0
-					this.pro.valueTen = 2.1
-				}else if(value ==='30'){
-					this.pro.valueNine = 3.0
-					this.pro.valueTen = 3.1
-				}else{
-					this.pro.valueNine = 5.0
-					this.pro.valueTen = 5.1
-				}
-			},
+            xxx() {
+                console.log(this.$refs.xxx)
+            },
+            changeSelectResultTableThree(value) {
+                if (value === '20') {
+                    this.pro.valueNine = 2.0
+                    this.pro.valueTen = 2.1
+                } else if (value === '30') {
+                    this.pro.valueNine = 3.0
+                    this.pro.valueTen = 3.1
+                } else {
+                    this.pro.valueNine = 5.0
+                    this.pro.valueTen = 5.1
+                }
+            },
             drawLine() {
                 let myChart = this.$echarts.init(document.getElementById('myChart'))
                 myChart.setOption({
@@ -1173,6 +1425,9 @@
 
     .vecp_system {
         display: flex;
+		/deep/ .el-button.is-circle{
+			padding: 2px !important;
+		}
         .ivu-btn {
             padding: 5px;
         }
@@ -1202,39 +1457,60 @@
             }
 
             .compareTableThree {
+				font-size: 0;
                 >div {
                     display: inline-block;
-                    span {
-                        width: 130px;
-                        display: block;
-                        text-align: left;
-                        line-height: 22px;
-                        border-right: 1px solid #E4E4E4;
-                        border-bottom: 1px solid #E4E4E4;
-                        text-indent: 2px;
-                    }
+					
+					font-size: 0;
+					>span{
+						font-size: 14px;
+					}
+					div{
+						display: inline-block;
+						vertical-align: top;
+						font-size: 12px;
+							span {
+								width: 130px;
+								display: block;
+								text-align: left;
+								line-height: 30px;
+								border-right: 1px solid #E4E4E4;
+								border-bottom: 1px solid #E4E4E4;
+								text-indent: 2px;
+							}
+					}
                 }
             }
+			.compareTableFour{
+				div{
+					display: inline-block;
+						span {
+							width: 130px;
+							display: block;
+							text-align: left;
+							line-height: 30px;
+							border-right: 1px solid #E4E4E4;
+							border-bottom: 1px solid #E4E4E4;
+						}
+				}
+			}
             .compareTableTwo {
+                >span {
+                    display: block;
+                    background: #d4d4aa;
+                    line-height: 34px;
+                    background: #c1a075;
+                }
                 .compareTableTwoList {
-                    >span {
-                        display: block;
-                        background: #d4d4aa;
-                        text-indent: 1em;
-                        line-height: 34px;
-                        background: #c1a075;
-                        text-indent: 2px;
-                    }
                     >div {
                         display: inline-block;
                         span {
                             width: 130px;
                             display: block;
                             text-align: left;
-                            line-height: 22px;
+                            line-height: 30px;
                             border-right: 1px solid #E4E4E4;
                             border-bottom: 1px solid #E4E4E4;
-                            text-indent: 2px;
                         }
                     }
                 }
@@ -1258,7 +1534,7 @@
                         border-right: 1px solid #E4E4E4;
                         border-bottom: 1px solid #E4E4E4;
                         width: 130px;
-                        line-height: 22px;
+                        line-height: 30px;
                         text-align: center;
                     }
                 }
@@ -1296,6 +1572,7 @@
                 }
             }
             .resultTableFive {
+                margin-top: 30px;
                 border: 1px solid #000000;
                 >div {
                     line-height: 30px;
@@ -1313,15 +1590,15 @@
             }
             .resultTableFour {
                 border: 1px solid #000000;
-                margin-top: 20px;
+                margin-top: 00px;
                 .sec {
-                    width: 200px;
+                    width: 300px;
                     display: flex;
                     span {
                         flex: 1;
                         width: 100px;
-                        line-height: 30px;
-                        height: 30px;
+                        line-height: 40px;
+                        height: 40px;
                         border-bottom: 1px solid #E4E4E4;
                         border-right: 1px solid #E4E4E4;
                         text-align: center;

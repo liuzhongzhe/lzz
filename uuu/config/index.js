@@ -49,8 +49,8 @@ module.exports = {
 
 		// Paths
 		assetsRoot: path.resolve(__dirname, '../dist'),
-//		assetsSubDirectory: 'platform_manage',
-		assetsSubDirectory: 'standard_manage',
+		assetsSubDirectory: 'platform_manage',
+		// assetsSubDirectory: 'standard_manage',
 		assetsPublicPath: './',
 
 		/**

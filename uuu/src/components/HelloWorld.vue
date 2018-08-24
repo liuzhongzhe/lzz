@@ -78,7 +78,7 @@
 				} else if(value === 'modelYear') {
 					return '车型年份'
 				} else if(value === 'engine') {
-					return '发动机名称'
+					return '发动机'
 				} else if(value === 'gearbox') {
 					return '变速箱'
 				} else if(value === 'drivenMode') {
@@ -97,7 +97,6 @@
 			changePlatformName(item, index) {
 				this.modelPlatform.platforms.forEach((xx) => {
 					if(xx.platform === item.value) {
-						//						
 						this.carModel.value = xx.models[0]
 						this.carModel.ar = xx.models
 					}

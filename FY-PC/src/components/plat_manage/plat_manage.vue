@@ -132,7 +132,6 @@
 						'Content-type': 'application/json;charset=UTF-8'
 					},
 					data: nobj
-
 				}).then((res) => {
 					if(res.status === 200) {
 						this._getData()
@@ -225,7 +224,6 @@
 					headers: {
 						'Content-type': 'application/json;charset=UTF-8'
 					}
-
 				}).then((res) => {
 					if(res.status === 200) {
 						this.dialogFormVisible = false
